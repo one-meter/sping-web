@@ -11,4 +11,4 @@ spring:
     config:
       label: master
       profile: db
-      uri: http://localhost:8002
+      uri: http://localhost:8001
