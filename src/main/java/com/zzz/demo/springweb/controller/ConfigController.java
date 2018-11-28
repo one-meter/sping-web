@@ -1,6 +1,7 @@
 package com.zzz.demo.springweb.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @since v1.0.0
  */
 @RestController
+@RefreshScope
 public class ConfigController {
 
-	@Value("database")
+	@Value("${aa}")
 	String database;
 
 	@RequestMapping("config_test")
