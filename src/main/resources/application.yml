@@ -1,9 +1,14 @@
 eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8001/eureka/
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
 server:
-    port: 8008
+  port: 8008
 spring:
-    application:
-        name: service-web
+  application:
+    name: service-web
+  cloud:
+    config:
+      label: master
+      profile: db
+      uri: http://localhost:8002
