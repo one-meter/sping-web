@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigController {
 
 	@Value("${aa}")
-	String database;
+	String aa;
 
 	@RequestMapping("config_test")
 	public String testConfig() {
-		System.out.println("retch from profile:" + database);
-		return "database value:" + database;
+		System.out.println("retch from profile:" + aa);
+		return "value:" + aa;
 	}
 
 }
