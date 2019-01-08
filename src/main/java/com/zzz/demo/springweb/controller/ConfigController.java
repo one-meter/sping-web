@@ -1,5 +1,7 @@
 package com.zzz.demo.springweb.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class ConfigController {
 
-	@Value("${aa}")
+	Logger logger = LoggerFactory.getLogger(UserController.class);
+
+	@Value("${spring.datasource.url}")
 	String aa;
 
 	@RequestMapping("config_test")
 	public String testConfig() {
-		System.out.println("retch from profile:" + aa);
+		logger.info("retch from profile:" + aa);
 		return "value:" + aa;
 	}
 

@@ -10,9 +10,14 @@ spring:
       label: master
       profile: db
       #不需写死配置服务器的地址，由注册中心管理
-      uri: http://localhost:8002/
-#      discovery:
-#        enabled: true
-#        service-id: config-server
+      discovery:
+        enabled: true
+        service-id: config-server
+      #uri: http://localhost:8002/
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    show-sql: true
 server:
   port: 8082
+
